@@ -1,3 +1,6 @@
+enum RadioMessage {
+    message1 = 49434
+}
 let Light_reading = 0
 basic.forever(function () {
     Light_reading = input.lightLevel()
@@ -40,5 +43,10 @@ basic.forever(function () {
             . . . . .
             . . . . .
             `)
+    }
+    if (input.buttonIsPressed(Button.AB)) {
+        basic.showString("" + (Light_reading))
+        basic.pause(1000)
+        basic.clearScreen()
     }
 })
